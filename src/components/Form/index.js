@@ -4,18 +4,7 @@ import { Dropdown } from "../Dropdown/index,"
 import { TextInput } from "../TextInput"
 import "./Form.css"
 
-export const Form = ({ onRegisteredCollaborator }) => {
-
-  const crews = [
-    "Programação",
-    "Front-End",
-    "DevOps",
-    "Back-End",
-    "UX e Design",
-    "Mobile",
-    "Inovação e Gestão"
-  ]
-
+export const Form = ({ onRegisteredCollaborator, crews }) => {
   const [name, setName] = useState("")
   const [role, setRole] = useState("")
   const [image, setImage] = useState("")
@@ -24,6 +13,10 @@ export const Form = ({ onRegisteredCollaborator }) => {
   function onSubmit(event) {
     event.preventDefault()
     onRegisteredCollaborator({ name, role, image, crew })
+    setName("")
+    setRole("")
+    setImage("")
+    setCrew("")
   }
 
   return (
