@@ -9,14 +9,16 @@ export const Form = ({ onRegisteredCollaborator, crews }) => {
   const [role, setRole] = useState("")
   const [image, setImage] = useState("")
   const [crew, setCrew] = useState("")
+  const [id, setId] = useState(Number)
 
   function onSubmit(event) {
     event.preventDefault()
-    onRegisteredCollaborator({ name, role, image, crew })
+    onRegisteredCollaborator({ name, role, image, crew, id })
     setName("")
     setRole("")
     setImage("")
     setCrew("")
+    setId(Math.random())
   }
 
   return (

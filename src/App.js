@@ -11,6 +11,10 @@ function App() {
     console.log(collaborator)
     setCollaborators([...collaborators, collaborator])
   }
+
+  const deleteCollaborator = (id) => {
+    setCollaborators(collaborators.filter(collaborator => collaborator.id !== id))
+  }
   return (
     <div className="App">
       <Banner />
@@ -24,6 +28,7 @@ function App() {
         primaryColor={crews.primaryColor}
         secondaryColor={crews.secondaryColor}
         collaborators={collaborators.filter(collaborator => collaborator.crew === crews.name)}
+        onDelete={deleteCollaborator}
       />)}
     </div>
   );
